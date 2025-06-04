@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOdo list</title>
+    <title>Todo List</title>
 </head>
 <body>
-    <h1>Todo LIST</h1>
-    {
-        todos.map(el => {
-            <h3></h3>
-        })
-    }
+    <h1>Todo List</h1>
+
+        <% todos.forEach(element => { %>
+         <h3>
+            <span><%= element.id %>. </span><%= element.task %>
+            <span><form action="/edit/<%= element.id %>"><button type="submit">Edit</button></form></span>
+            <span><button>Delete</button></span>
+        </h3>
+        <% }) %>
+        <form action="/newTodo">
+            <button>Add new Task</button>
+        </form>
 </body>
 </html>
